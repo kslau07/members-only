@@ -3,9 +3,19 @@
 <% end %>
 
 <%= form_with model: @post, url: posts_path, method: :post do |form| %>
-	<%= form.label :title %>
-	<%= form.text_field :title %>
-	<%= form.submit 'Submit' %>
+	<ul>
+		<li>
+			<%= form.label :title %>
+			<%= form.text_field :title %>
+		</li>
+		<li>
+			<%= form.label :body %>
+			<%= form.text_area :body %>			
+		</li>
+		<li>
+			<%= form.submit 'Submit' %>
+		</li>
+	</ul>
 <% end %>
 
 <%# new post form %>

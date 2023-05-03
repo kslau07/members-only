@@ -10,26 +10,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @current_user = current_user
+    @post = @current_user.posts.new(post_params)
 
     if @post.save
+      flash[:notice] = 'A new post was created!'
       redirect_to posts_path
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-  # def create
-  #   @current_user = current_user
-  #   @post = @current_user.posts.create(post_params)
-
-  #   if @post.save
-  #     flash[:notice] = 'A new post was created!'
-  #     redirect_to posts_path
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
 
   private
 

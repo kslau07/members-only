@@ -4,4 +4,8 @@
   </div>
 <% end %>
 
+<% @posts.each do |post| %>
+	<div><%= "#{post.user_id}: #{post.body}" %></div>
+<% end %>
+
 posts index content

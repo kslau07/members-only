@@ -1,0 +1,14 @@
+<% @post.errors.full_messages.each do |msg| %>
+	<div style='color: red;'><%= msg %></div>
+<% end %>
+
+<%= form_with model: @post, url: posts_path, method: :post do |form| %>
+	<%= form.label :title %>
+	<%= form.text_field :title %>
+	<%= form.submit 'Submit' %>
+<% end %>
+
+<%# new post form %>
+<%# flesh out form here %>
+<%# title %>
+<%# body %>

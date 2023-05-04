@@ -1,0 +1,64 @@
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* apparently it's better to inherit box-sizing (?) */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  height: 100%;
+}
+
+ol, ul, menu {
+	list-style: none;
+	padding: 0; /* needed? */
+}
+
+/* Widgets inherit font-face */
+button,
+input,
+label,
+select,
+textarea {
+  appearance: none;
+  font-family: inherit;
+	letter-spacing: inherit;
+  font-size: 100%;
+}
+
+/* Give widgets same border-box attrs */
+button,
+input,
+label,
+select,
+textarea {
+  /* width: 75px; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+	outline: none;
+}
+
+/* Prevent blow-out */
+img {
+  max-width: 100%;
+}
+
+/* needed? */
+a, button {
+	cursor: pointer;
+}

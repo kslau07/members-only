@@ -1,0 +1,33 @@
+body {
+	display: grid;
+	justify-content: center;
+}
+
+/* delete me */
+* {
+	/* border: 1px dotted green; */
+}
+
+.secrets-container {
+	font: 2rem "Permanent Marker";
+}
+
+.secrets-container div:nth-child(even) {
+	color: gray;
+	}
+		
+.secrets-container div:nth-child(odd) {
+	color: darkgray;
+}
+
+.secret-box {
+	margin-bottom: 7rem;
+}
+
+.secret-author {
+	text-align: right;
+}
+
+.timestamp {
+	font: 1rem "Serif";
+}

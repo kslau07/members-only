@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index]
 
   def index
     @posts = Post.all
+    @users = User.all
+    @user_signed_in = user_signed_in?
   end
 
   def new
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
     @post = @current_user.posts.new(post_params)
 
     if @post.save
-      flash[:notice] = 'A new post was created!'
+      flash[:notice] = 'A new secret has been posted.'
       redirect_to posts_path
     else
       render :new, status: :unprocessable_entity
@@ -24,6 +26,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:body)
   end
 end

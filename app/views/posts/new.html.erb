@@ -5,11 +5,7 @@
 <%= form_with model: @post, url: posts_path, method: :post do |form| %>
 	<ul>
 		<li>
-			<%= form.label :title %>
-			<%= form.text_field :title %>
-		</li>
-		<li>
-			<%= form.label :body %>
+			<%= form.label :body, 'Secret: ' %>
 			<%= form.text_area :body %>			
 		</li>
 		<li>
@@ -17,8 +13,3 @@
 		</li>
 	</ul>
 <% end %>
-
-<%# new post form %>
-<%# flesh out form here %>
-<%# title %>
-<%# body %>

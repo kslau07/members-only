@@ -4,8 +4,42 @@
   </div>
 <% end %>
 
-<% @posts.each do |post| %>
-	<div><%= "#{post.user_id}: #{post.body}" %></div>
-<% end %>
+<div class="secrets-container">
+  <% @posts.reverse_each do |post| %>
+      <div class="secret-box">
+        <p class="secret-body"><%= "\"#{post.body}\"" %></p>
+        <p class="secret-author">
+          <% if @user_signed_in %>
+            <%= "- #{@users.find(post.user_id).email}" %>
+          <% else %>
+            <%= "- Anonymous" %>
+          <% end %>
+          <span class="timestamp"><%= " (#{(Time.now - post.created_at).round/60/60} hours ago)" %></span>
+        </p>
+      </div>
+  <% end %>
+</div>
 
-posts index content
+<div></div>
+
+<div><%#= "User signed in? #{@user_signed_in}" %></div>
+
+<div>
+
+  <% if @user_signed_in %>
+    <%= "You are signed in." %> 
+  <% else %>
+    <%= "You are not signed in. Sign in here." %>
+  <% end %>
+</div>
+
+<div></div>
+
+<%# works with rails-ujs and Turbo %>
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<%= button_to "New secret", new_post_path, method: :get %>
+<%= button_to "Sign up", new_user_registration_path, method: :get %>
+
+<%#= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+
+

@@ -4,6 +4,20 @@
   </div>
 <% end %>
 
+<div>
+  <% if @user_signed_in %>
+    <%= "You are signed in." %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%= button_to "New secret", new_post_path, method: :get %>
+
+  <% else %>
+    <%= "You are not signed in. Sign in here." %>
+    <%= button_to "Sign in", new_user_session_path, method: :get %>
+    <%= button_to "Sign up", new_user_registration_path, method: :get %>
+
+  <% end %>
+</div>
+
 <div class="secrets-container">
   <% @posts.reverse_each do |post| %>
       <div class="secret-box">
@@ -20,26 +34,5 @@
   <% end %>
 </div>
 
-<div></div>
-
-<div><%#= "User signed in? #{@user_signed_in}" %></div>
-
-<div>
-
-  <% if @user_signed_in %>
-    <%= "You are signed in." %> 
-  <% else %>
-    <%= "You are not signed in. Sign in here." %>
-  <% end %>
-</div>
-
-<div></div>
-
-<%# works with rails-ujs and Turbo %>
-<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-<%= button_to "New secret", new_post_path, method: :get %>
-<%= button_to "Sign up", new_user_registration_path, method: :get %>
-
-<%#= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
 
 

@@ -3,7 +3,7 @@
     <div class="header-title">wispr</div>
     <div class="user-area">
       <% if @user_signed_in %>
-        <%= "You are signed in." %>        
+        <%= "You are signed in." %> &nbsp
         <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
       <% else %>
         <span>
@@ -12,11 +12,9 @@
            or 
           <%= link_to "Sign up", new_user_registration_path, method: :get %>
         </span>
-        
       <% end %>
     </div>
   </div>
-
   <div class="body">
     <div class="body-title">Latest wisprs:</div>
     <% @posts.reverse_each do |post| %>
@@ -33,13 +31,11 @@
       </div>
     <% end %>
   </div>
-
   <div class="footer">
     <% if @user_signed_in %>
       <div class="new-post">
         <%= link_to "New wispr", new_post_path, method: :get %>
       </div>
-
     <% else %>
       <div class="not-signed-in">
         <%= link_to "Sign in", new_user_session_path, method: :get %> to post a wispr!

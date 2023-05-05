@@ -7,75 +7,79 @@ body {
 	margin: 0;
 }
 
-.posts {
-	display: grid;
-	height: 100%;
-	/* width: 100%; */
-	/* justify-content: center; */
-	/* justify-items: center; */
-	/* align-items: center; */
-
-	grid-template-areas: 
-	"secrets-header"
-	"secrets-body"
-	"secrets-footer";
-
-	grid-template-rows: 75px 1fr 45px;
-	/* grid-template-columns: 100%; */
+/* delete me */
+* {
+	/* outline: 1px dotted red; */
 }
 
-.posts .secrets-header {
-	grid-area: secrets-header;
-	background-color: DarkSlateGrey;
+a {
+	color: white;
+	/* text-decoration: none; */
+}
+
+/*
+	gray lightgray lightblue
+	set header, body, footer areas
+	make full height
+
+	header:
+	set grid
+		3 parts, header-left header-title user-area
+
+	center header-title
+	align right user-area
+
+	center "new wispr"
+
+	center body
+*/
+
+.posts {
 	display: grid;
 	/* justify-content: center; */
+	height: 100%;
+	grid-template-areas: 
+	"header"
+	"body"
+	"footer";
+	grid-template-rows: 75px 1fr 45px;
+}
+
+.posts .header {
+	grid-area: header;
+	background-color: black;
+	display: grid;
+	grid-template-areas: "header-unused 		header-title 		user-area";
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header-title {
+	grid-area: header-title;
+	display: grid;
 	place-content: center;
-	font: 5rem "Courgette";
 	color: white;
 }
 
-.posts .secrets-body {
-	grid-area: secrets-body;
-	padding: 5rem 0;
-	/* max-width: 100rem; */
+.user-area {
+	grid-area: user-area;
+	display: flex;
+	justify-content: right;
+	align-items: end;
+	color: white;
+	padding: 0.50rem 2rem;
+}
+
+.posts .body {
+	grid-area: body;
 	display: grid;
 	justify-content: center;
+	background-image: url("diagonal-lines.svg");
 }
 
-.posts .secrets-footer {
-	background-color: gray;
-	grid-area: secrets-footer;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	/* display: grid; */
-	/* text-align: center; */
-	/* justify-content: center; */
-}
-
-/* delete me */
-* {	border: 1px dotted lightgray;}
-
-.posts .secrets-container {
-	font: 2rem "Permanent Marker";
-}
-
-.posts .secrets-container div:nth-child(even) {
-	color: gray;
-	}
-		
-.posts .secrets-container div:nth-child(odd) {
-	color: darkgray;
-}
-
-.posts .secret-box {
-	margin-bottom: 7rem;
-}
-
-.posts .secret-author {
-	text-align: right;
-}
-
-.posts .timestamp {
-	font: 1rem "Serif";
+.posts .footer {
+	grid-area: footer;
+	background-color: black;
+	display: grid;
+	place-content: center;
+	color: white;
 }

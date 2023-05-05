@@ -1,25 +1,10 @@
-<% flash.each do |type, msg| %>
-  <div style='background-color: orange;'>
-    <%= msg %>
+<div class="posts">
+  <div class="secrets-header">
+    My Secret
   </div>
-<% end %>
 
-<div>
-  <% if @user_signed_in %>
-    <%= "You are signed in." %>
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-    <%= button_to "New secret", new_post_path, method: :get %>
-
-  <% else %>
-    <%= "You are not signed in. Sign in here." %>
-    <%= button_to "Sign in", new_user_session_path, method: :get %>
-    <%= button_to "Sign up", new_user_registration_path, method: :get %>
-
-  <% end %>
-</div>
-
-<div class="secrets-container">
-  <% @posts.reverse_each do |post| %>
+  <div class="secrets-container secrets-body">
+    <% @posts.reverse_each do |post| %>
       <div class="secret-box">
         <p class="secret-body"><%= "\"#{post.body}\"" %></p>
         <p class="secret-author">
@@ -31,8 +16,19 @@
           <span class="timestamp"><%= " (#{(Time.now - post.created_at).round/60/60} hours ago)" %></span>
         </p>
       </div>
-  <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="secrets-footer">
+    <% if @user_signed_in %>
+      <%= "You are signed in." %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= link_to "New secret", new_post_path, method: :get %>
+    <% else %>
+      <%= "You are not signed in. Sign in here. Sign up here." %>
+      <%= link_to "Sign in", new_user_session_path, method: :get %>
+      <%= link_to "Sign up", new_user_registration_path, method: :get %>
+    <% end %>
+  </div>
 </div>
-
-
-

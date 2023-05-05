@@ -1,0 +1,81 @@
+:root {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.posts {
+	display: grid;
+	height: 100%;
+	/* width: 100%; */
+	/* justify-content: center; */
+	/* justify-items: center; */
+	/* align-items: center; */
+
+	grid-template-areas: 
+	"secrets-header"
+	"secrets-body"
+	"secrets-footer";
+
+	grid-template-rows: 75px 1fr 45px;
+	/* grid-template-columns: 100%; */
+}
+
+.posts .secrets-header {
+	grid-area: secrets-header;
+	background-color: DarkSlateGrey;
+	display: grid;
+	/* justify-content: center; */
+	place-content: center;
+	font: 5rem "Courgette";
+	color: white;
+}
+
+.posts .secrets-body {
+	grid-area: secrets-body;
+	padding: 5rem 0;
+	/* max-width: 100rem; */
+	display: grid;
+	justify-content: center;
+}
+
+.posts .secrets-footer {
+	background-color: gray;
+	grid-area: secrets-footer;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	/* display: grid; */
+	/* text-align: center; */
+	/* justify-content: center; */
+}
+
+/* delete me */
+* {	border: 1px dotted lightgray;}
+
+.posts .secrets-container {
+	font: 2rem "Permanent Marker";
+}
+
+.posts .secrets-container div:nth-child(even) {
+	color: gray;
+	}
+		
+.posts .secrets-container div:nth-child(odd) {
+	color: darkgray;
+}
+
+.posts .secret-box {
+	margin-bottom: 7rem;
+}
+
+.posts .secret-author {
+	text-align: right;
+}
+
+.posts .timestamp {
+	font: 1rem "Serif";
+}

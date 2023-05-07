@@ -1,0 +1,8 @@
+<div class="flashes">
+	<% unless flash.empty? %>
+		<h2><%= "#{flash.count} #{flash.count == 1 ? "error" : "errors"} prohibited log in:" %></h2>
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, id: "flash_#{name}" %>
+		<% end %>
+	<% end %>
+</div>

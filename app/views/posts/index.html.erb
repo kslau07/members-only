@@ -1,3 +1,5 @@
+<%= render 'flashes' %>
+
 <div class="posts">
   <div class="header">
     <div class="header-title">wispr</div>
@@ -33,13 +35,9 @@
   </div>
   <div class="footer">
     <% if @user_signed_in %>
-      <div class="new-post">
-        <%= link_to "New wispr", new_post_path, method: :get %>
-      </div>
+      <%= link_to "New wispr", new_post_path, method: :get %>
     <% else %>
-      <div class="not-signed-in">
-        <%= link_to "Sign in", new_user_session_path, method: :get %> to post a wispr!
-      </div>
+      <%= link_to "Sign in", new_user_session_path, method: :get %> to post a wispr!
     <% end %>
   </div>
 </div>

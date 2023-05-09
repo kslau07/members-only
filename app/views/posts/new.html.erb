@@ -1,15 +1,17 @@
-<% @post.errors.full_messages.each do |msg| %>
-	<div style='color: red;'><%= msg %></div>
-<% end %>
-
-<%= form_with model: @post, url: posts_path, method: :post do |form| %>
-	<ul>
-		<li>
-			<%= form.label :body, 'my wispr: ' %>
-			<%= form.text_area :body %>			
-		</li>
-		<li>
-			<%= form.submit 'Submit' %>
-		</li>
-	</ul>
-<% end %>
+<div class="new-post">
+	<% @post.errors.full_messages.each do |msg| %>
+		<div style='color: red;'><%= msg %></div>
+	<% end %>
+	
+	<%= form_with model: @post, url: posts_path, method: :post do |form| %>
+		<ul>
+			<li>
+				<h2><%= form.label :body, 'my wispr: ' %></h2><br>
+				<%= form.text_area :body %>
+			</li>
+			<li>
+				<%= form.submit 'Submit' %>
+			</li>
+		</ul>
+	<% end %>
+</div>

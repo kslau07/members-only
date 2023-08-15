@@ -11,3 +11,4 @@ In this project, we’ll be building an exclusive clubhouse where your members c
 ## Reflections
 
 Authentication and authorization is seemingly made easy with the Devise gem although this project only scratched the surface. With each mini-project I feel more comfortable working within the MVC pattern. For the next project I'm going to focus more on how to better utilize views and partials.
+

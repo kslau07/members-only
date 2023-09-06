@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+ActiveRecord::Base.transaction do
+  user = User.create!(email: 'test@example.com', password: 'f4k3p455w0rd') 
+  new_user_msg = "A new user was created!"
+  puts "\e[31m#{new_user_msg}\e[0m"
+end

@@ -1,14 +1,24 @@
-# Odin Project: Members Only
+Odin Project: Members-Only
+==========================
 
-> Project spec can be found at:
+[ __[ LINK TO PROJECT SPECS PAGE ]__ ](https://www.theodinproject.com/lessons/ruby-on-rails-members-only)
 
-> https://www.theodinproject.com/lessons/ruby-on-rails-members-only
+In this project, we will be building an exclusive clubhouse where members can write anonymous posts. When not logged in, users may view posted messages but will not know who wrote them. Once logged in, users will able to see both messages and the author of said message. 
 
-## What is this?
+__New concepts to apply:__
+* Authorization vs authentication
+* Devise gem, logging in, logging out
+* Rails form helpers
+* Testing with RSpec (System & Model)
 
-In this project, we’ll be building an exclusive clubhouse where your members can write anonymous posts. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
+How it's made:
+-------------
 
-## Reflections
+*Tech used:* HTML, CSS, Ruby on Rails, RSpec
 
-Authentication and authorization is seemingly made easy with the Devise gem although this project only scratched the surface. With each mini-project I feel more comfortable working within the MVC pattern. For the next project I'm going to focus more on how to better utilize views and partials.
+Although not stipulated in the Odin curriculum, I decided to go back and revisit this project in order to add some tests. I learned testing concepts from www.codewithjason.com and I will be using RSpec to write and run the tests, as RSpec appears to be a more complete testing suite than the built-in Mini-Test.
+
+Lessons learned:
+----------------
+
 

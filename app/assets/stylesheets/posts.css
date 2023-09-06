@@ -6,10 +6,10 @@
 body {
 	height: 100%;
 	margin: 0;
-	--header: hsl(209, 39%, 15%);
-	--body-bg: hsl(209, 39%, 76%);
+	--header: gainsboro;
+	--body-bg: white;
 	--post-box-color: hsla(0, 0%, 100%, 0.8);
-	--footer: hsl(209, 39%, 15%);
+	--footer: darkgray;
 }
 
 a {
@@ -41,7 +41,7 @@ a {
 	display: grid;
 	font: 5rem "Permanent Marker";
 	letter-spacing: 0.50rem;
-	place-content: center;
+        place-content: center;
 	color: white;
 }
 

@@ -1,5 +1,8 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'webdrivers'
+# require 'selenium-webdriver'
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -19,7 +22,8 @@ require 'rspec/rails'
 # of increasing the boot-up time by auto-requiring all files in the support
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
-#
+
+# To add support for factory_bot
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
@@ -30,6 +34,18 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+
+  config.before(:each) do
+    # We can run headless with these lines
+    # if ENV['HEADLESS'] == 'true'
+    #   Capybara.current_driver = :selenium_chrome_headless
+    # else
+    #   capybara.current_driver = :selenium_chrome
+    # end
+  end
+
+  # config.include Warden::Test::Helpers
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

@@ -57,8 +57,11 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   # gem 'factory_bot_rails'
   # A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker'
+  gem 'capybara'
+  gem 'factory_bot_rails'
+  # gem 'faker'
   gem 'rspec-rails'
+  gem "webdrivers"
 end
 
 group :development do
@@ -74,7 +77,4 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
 end

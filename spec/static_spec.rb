@@ -16,3 +16,5 @@ RSpec.describe 'Static content', type: :system do
     expect(page).to have_content("We're sorry, but something went wrong.")
   end
 end
+
+

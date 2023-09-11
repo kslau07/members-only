@@ -1,0 +1,8 @@
+reporters:
+- rubocop
+- require_not_found
+plugins:
+  - solargraph-rails
+plugins:
+  - solargraph-rails
+

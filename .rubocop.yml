@@ -1,0 +1,121 @@
+require:
+  - rubocop-rails
+
+Rails:
+  Enabled: true
+
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    # - db/schema.rb
+    # - db/seeds.rb
+    # - bin/**/*
+    # - node_modules/**/*
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  enforcedstyle: indented_internal_methods
+  Exclude:
+    - config/routes.rb
+
+# Rails/FilePath:
+#   Exclude:
+#   - config/environments/development.rb
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - spec/**/*.rb
+
+# Metrics/BlockLength:
+#   Exclude:
+#     - spec/**/*.rb
+#     - config/environments/*.rb
+#     - lib/tasks/auto_annotate_models.rake
+#     - Guardfile
+
+# Metrics/MethodLength:
+#   Include:
+#     - "app/controllers/*"
+#     - "app/models/*"
+#   Max: 20
+
+# Metrics/AbcSize:
+#   Include:
+#     - "app/controllers/*"
+#     - "app/models/*"
+#   Max: 50
+
+# Metrics/ClassLength:
+#   Max: 150
+
+# Metrics/BlockLength:
+#   ExcludedMethods: ['describe']
+#   Max: 30
+
+# Lint/NonDeterministicRequireOrder:
+#   Exclude:
+#     - spec/rails_helper.rb
+
+# Layout/HashAlignment:
+#   Exclude:
+#     - lib/tasks/auto_annotate_models.rake
+
+# Rails/Date:
+  # Exclude:
+
+# Style/Documentation:
+#   Enabled: false
+
+# Style/ClassAndModuleChildren:
+#   Enabled: false
+
+# Style/EachForSimpleLoop:
+#   Enabled: false
+
+# Style/AndOr:
+#   Enabled: false
+
+# Style/DefWithParentheses:
+#   Enabled: false
+
+# Style/FrozenStringLiteralComment:
+#   EnforcedStyle: never
+
+# Layout/HashAlignment:
+#   EnforcedColonStyle: key
+
+# Layout/ExtraSpacing:
+#   AllowForAlignment: false
+
+# Layout/MultilineMethodCallIndentation:
+#   Enabled: true
+#   EnforcedStyle: indented
+
+# Lint/RaiseException:
+#   Enabled: false
+
+# Lint/StructNewOverride:
+#   Enabled: false
+
+# Style/HashEachMethods:
+#   Enabled: false
+
+# Style/HashTransformKeys:
+#   Enabled: false
+
+# Style/HashTransformValues:
+#   Enabled: false
+
+
+

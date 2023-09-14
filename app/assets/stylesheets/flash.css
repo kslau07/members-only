@@ -1,6 +1,8 @@
 .flashes {
   text-align: center;
   color: red;
+  font-weight: bold;
+  background-color: black;
 }
 
 #flash_notice {

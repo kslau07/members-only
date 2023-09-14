@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = @current_user.posts.new(post_params)
 
     if @post.save
-      flash[:notice] = 'A new secret has been posted.'
+      flash[:notice] = 'You have posted a new secret.'
       redirect_to posts_path
     else
       render :new, status: :unprocessable_entity

@@ -1,41 +1,44 @@
 <%= render 'flashes' %>
 
 <div class="posts">
-  <div class="header">
-    <div class="header-title">wispr</div>
-    <div class="user-area">
+  <div class="posts-header">
+    <div class="posts-header-title">
+      <div class="posts-header-title-main">whispr</div>
+      <div class="posts-header-title-sub">"Your secret is safe with us."</div>
+    </div>
+    <div class="posts-header-user-area">
       <% if @user_signed_in %>
-        <%= "You are signed in." %> &nbsp
-        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+        <%= "You are signed in." %> &nbsp;
+        <%= link_to "sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
       <% else %>
         <span>
-          You are not signed in.
-          <%= link_to "Sign in", new_user_session_path, id: "header-sign-in", method: :get %>
-           or 
-          <%= link_to "Sign up", new_user_registration_path, method: :get %>
+        you are not signed in.
+        <%= link_to "sign in", new_user_session_path, id: "header-sign-in", method: :get %>
+                     or 
+                     <%= link_to "sign up", new_user_registration_path, method: :get %>
         </span>
       <% end %>
     </div>
   </div>
-  <div class="body">
-    <div class="body-title">Latest wisprs:</div>
+  <div class="posts-body">
+    <div class="posts-body-header">Latest whisprs:</div>
     <% @posts.reverse_each do |post| %>
-      <div class="post-box">
-        <p class="post-body"><%= "\"#{post.body}\"" %></p>
-        <p class="post-author">
-          <% if @user_signed_in %>
-            <%= "- #{@users.find(post.user_id).email}" %>
-          <% else %>
-            <%= "- Anonymous" %>
-          <% end %>
-          <span class="timestamp"><%= " (#{(Time.now - post.created_at).round/60/60} hours ago)" %></span>
+      <div class="posts-whispr-container">
+        <p class="posts-whispr-body"><%= "\"#{post.body}\"" %></p>
+        <p class="posts-whispr-author">
+        <% if @user_signed_in %>
+          <%= "- #{@users.find(post.user_id).email}" %>
+        <% else %>
+          <%= "- Anonymous" %>
+        <% end %>
+        <span class="timestamp"><%= " (#{(Time.now - post.created_at).round/60/60} hours ago)" %></span>
         </p>
       </div>
     <% end %>
   </div>
-  <div class="footer">
+  <div class="posts-footer">
     <% if @user_signed_in %>
-      <%= link_to "New wispr", new_post_path, method: :get %>
+      <%= link_to "New whispr", new_post_path, method: :get %>
     <% else %>
       <%= link_to "Sign in", new_user_session_path, method: :get %> to post a wispr!
     <% end %>

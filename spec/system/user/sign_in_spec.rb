@@ -15,8 +15,7 @@ feature 'Logging in' do
     page_content_has 'Invalid Email or password.'
   end
 
-  scenario '' do
-  end
+  # These methods are used to DRY up repetitive tasks and to read better as plain English
 
   def sign_in_with(email, password)
     visit root_path

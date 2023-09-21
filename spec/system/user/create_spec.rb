@@ -2,9 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'create user', type: :system do
-  let(:user) { FactoryBot.create(:user) }
-
+feature 'User sign up' do
   scenario 'sign up and leave all fields blank' do
     visit root_path
     click_link 'Sign up'
@@ -45,6 +43,7 @@ RSpec.describe 'create user', type: :system do
   end
 
   scenario 'have FactoryBot create a user' do
+    user = FactoryBot.build(:user)
     expect(user.email).to eq 'user@example.com'
   end
 

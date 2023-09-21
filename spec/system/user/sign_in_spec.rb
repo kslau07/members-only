@@ -16,7 +16,6 @@ feature 'Logging in' do
   end
 
   scenario '' do
-
   end
 
   def sign_in_with(email, password)

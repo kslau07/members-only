@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-# frozen_string_literal: true
-
 
 # == Schema Information
 #
@@ -20,5 +18,3 @@
 #
 #  user_id  (user_id => users.id)
 #
-
-

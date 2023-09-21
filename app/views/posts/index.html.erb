@@ -12,10 +12,10 @@
         <%= link_to "sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
       <% else %>
         <span>
-        You are not signed in.
-        <%= link_to "sign in", new_user_session_path, id: "header-sign-in", method: :get %>
-                     or 
-                     <%= link_to "sign up", new_user_registration_path, method: :get %>
+          You are not signed in.
+          <%= link_to "Sign in", new_user_session_path, id: "header-sign-in", method: :get %>
+          or 
+          <%= link_to "Sign up", new_user_registration_path, method: :get %>
         </span>
       <% end %>
     </div>

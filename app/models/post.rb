@@ -18,9 +18,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :likes, dependent: :destroy
-  # has_many :post_likings, through: :likes, dependent: :destroy
-
+  has_many :likes
 
   validates :body, presence: true
 end

@@ -14,10 +14,11 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 #
-# TODO:Create a like join (through) table and add both Post and User
+# todo:Create a like join (through) table and add both Post and User
 # 1. Check if "like" exists in schema.
-# TODO: A Post will refer to its users that liked it as "liked_users".
-# TODO: A User will refer to posts they have liked as "liked_posts".
+# todo: A Post will refer to its users that liked it as "liked_users".
+# todo: A User will refer to posts they have liked as "liked_posts".
+# TODO: Use seeds to create 1 user and 1 post.
 # TODO: Update each individual post with a link to "Like" which will 
 # create a "like" object. Check for uniqueness: { scope: "User" }
 # NOTE: :cexpr [] clears quickfix window

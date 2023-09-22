@@ -1,9 +1,9 @@
 
 .flashes {
   text-align: center;
-  color: red;
+  color: darkred;
   font-weight: bold;
-  background-color: black;
+  /* background-color: black; */
 }
 
 #flash_notice {

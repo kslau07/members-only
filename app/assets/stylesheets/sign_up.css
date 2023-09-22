@@ -2,4 +2,50 @@
   display: grid;
   justify-content: center;
   padding-top: 5rem;
+  width: 33%;
+  margin: auto;
+  text-align: center;
+}
+
+.sign-up h2,
+.log-in h2 {
+  margin-bottom: 2rem;
+}
+
+.sign-up .field {
+  /* text-align: center; */
+}
+.sign-up-email-field,
+.sign-up-password-field,
+.sign-up-password-confirmation-field,
+.log-in-email-field,
+.log-in-password-field {
+  padding: 0.75rem;
+  border-radius: 0.35rem;
+  /* width: 100%; */
+  margin-bottom: 2rem;
+}
+
+.sign-up .actions,
+.log-in .actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.log-in-checkbox {
+	appearance: auto;
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+
+.sign-up .sign-up-submit-button,
+.log-in .log-in-submit-button {
+  padding: 0.50rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+#error_explanation h2{
+  font-size: 1.6rem;
 }

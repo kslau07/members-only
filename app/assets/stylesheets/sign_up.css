@@ -12,9 +12,6 @@
   margin-bottom: 2rem;
 }
 
-.sign-up .field {
-  /* text-align: center; */
-}
 .sign-up-email-field,
 .sign-up-password-field,
 .sign-up-password-confirmation-field,
@@ -38,7 +35,6 @@
 	width: 1.5rem;
 }
 
-
 .sign-up .sign-up-submit-button,
 .log-in .log-in-submit-button {
   padding: 0.50rem;
@@ -46,6 +42,10 @@
   cursor: pointer;
 }
 
-#error_explanation h2{
+#error_explanation h2 {
   font-size: 1.6rem;
+}
+
+#error_explanation ul {
+  margin-bottom: 2rem;
 }

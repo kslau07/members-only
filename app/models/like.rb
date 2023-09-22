@@ -22,5 +22,5 @@ class Like < ApplicationRecord
   belongs_to :liked_user, class_name: "User"
   belongs_to :liked_post, class_name: "Post"
 
-  validates :post, uniqueness: { scope: :user }
+  validates :liked_post, uniqueness: { scope: :liked_user }
 end

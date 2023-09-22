@@ -2,8 +2,10 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
 
   def index
-    @posts = Post.all
+    # TODO: Use includes here, which models?
     @users = User.all
+    @posts = Post.all
+    @likes = Likes.all
     @user_signed_in = user_signed_in?
   end
 

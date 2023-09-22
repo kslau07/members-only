@@ -20,6 +20,7 @@
 # todo: A User will refer to posts they have liked as "liked_posts".
 # todo: Use seeds.rb to create 1 user and 1 post.
 # todo: Use seeds.rb to create 1 like.
+# TODO: Use seeds to create 2 users with 1 post each.
 # TODO: Update each individual post with a link to "Like" which will
 # create a "like" object. Check for uniqueness: { scope: "User" }
 # NOTE: :cexpr [] clears quickfix window

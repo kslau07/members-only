@@ -5,8 +5,8 @@
 #  id            :integer          not null, primary key
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  liked_post_id :integer          not null
-#  liked_user_id :integer          not null
+#  liked_post_id :integer
+#  liked_user_id :integer
 #
 # Indexes
 #
@@ -15,10 +15,12 @@
 #
 # Foreign Keys
 #
-#  liked_post_id  (liked_post_id => post.id)
-#  liked_user_id  (liked_user_id => user.id)
+#  liked_post_id  (liked_post_id => posts.id)
+#  liked_user_id  (liked_user_id => users.id)
 #
 class Like < ApplicationRecord
-  belongs_to :user
-  belongs_to :post
+  belongs_to :liked_user, class_name: "User"
+  belongs_to :liked_post, class_name: "Post"
+
+  validates :post, uniqueness: { scope: :user }
 end

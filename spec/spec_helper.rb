@@ -18,8 +18,9 @@
 # 1. Check if "like" exists in schema.
 # todo: A Post will refer to its users that liked it as "liked_users".
 # todo: A User will refer to posts they have liked as "liked_posts".
-# TODO: Use seeds to create 1 user and 1 post.
-# TODO: Update each individual post with a link to "Like" which will 
+# todo: Use seeds.rb to create 1 user and 1 post.
+# todo: Use seeds.rb to create 1 like.
+# TODO: Update each individual post with a link to "Like" which will
 # create a "like" object. Check for uniqueness: { scope: "User" }
 # NOTE: :cexpr [] clears quickfix window
 

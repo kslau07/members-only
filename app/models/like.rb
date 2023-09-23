@@ -10,8 +10,9 @@
 #
 # Indexes
 #
-#  index_likes_on_liked_post_id  (liked_post_id)
-#  index_likes_on_liked_user_id  (liked_user_id)
+#  index_likes_on_liked_post_id                    (liked_post_id)
+#  index_likes_on_liked_post_id_and_liked_user_id  (liked_post_id,liked_user_id) UNIQUE
+#  index_likes_on_liked_user_id                    (liked_user_id)
 #
 # Foreign Keys
 #

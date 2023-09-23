@@ -27,13 +27,39 @@
         <p class="posts-whispr-body"><%= "\"#{post.body}\"" %></p>
         <p class="posts-whispr-author">
         <% if @user_signed_in %>
-          <%= "- #{@users.find(post.user_id).email}" %>
+          <%#= "- #{@users.find(post.user_id).email}" %>
+          <%= "- #{post.post_author.email}" %>
         <% else %>
           <%= "- Anonymous" %>
         <% end %>
         <span class="timestamp"><%= " (#{(Time.now - post.created_at).round/60/60} hours ago)" %></span>
         </p>
+
+        <div class="posts-whispr-likes-container">
+          <% if user_signed_in? && post.liked_users.include?(current_user) %>
+            <% target_like = post.likes.find_by(liked_user_id: current_user.id) %>
+            <%= button_to like_path(target_like), method: :delete, data: { turbo_method: :delete }, class: "like_post-button" do %>
+              <%= image_tag("like_btn.png", size: "20x20", alt: "Like icon", class: "like-icon") %> 
+              Unlike
+            <% end %>
+          <% elsif user_signed_in? && post.liked_users.exclude?(current_user) %>
+            <%= button_to likes_path, params: { like: { liked_post_id: post.id } }, class: "like_post-button" do %>
+              <%= image_tag("like_btn.png", size: "20x20", alt: "Like icon", class: "like-icon") %> 
+              Like
+            <% end %>
+          <% elsif user_signed_in? == false %>
+            <%= button_to new_user_session_path, method: :get, class: "like_post-button" do %>
+              <%= image_tag("like_btn.png", size: "20x20", alt: "Like icon", class: "like-icon") %> 
+              Like
+            <% end %>
+          <% end %>
+          <%= link_to "", class: "liked_users-link" do %>
+            <%= image_tag("like.png", size: "20x20", alt: "Like icon", class: "liked_users-icon") %> 
+            <%= "#{ post.liked_users.count } #{'user'.pluralize(post.liked_users.count)} liked this" %>
+          <% end %>
+        </div>
       </div>
+
     <% end %>
   </div>
   <div class="posts-footer">

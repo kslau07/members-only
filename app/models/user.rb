@@ -17,7 +17,7 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
-  has_many :posts, dependent: :destroy
+  has_many :posts, dependent: :destroy, foreign_key: :post_author_id
   has_many :likes, foreign_key: :liked_user_id
   has_many :liked_posts, through: :likes, source: :liked_post
 

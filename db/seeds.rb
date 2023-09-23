@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-# TODO: Show number of likes on a post
-# 2. Go to post controller#index, add @likes=Like.all
-# 3. Go to each individual post, query its Likes from the db
+# done: Show number of likes on a post
+# TODO: Allow user to click "Like" which creates a new like object
+# 1) Go to like controller and make sure the relevant actions are present
+#    The actions are: create and destroy
+# 2} Link to an action but just have it print to term
+#     Figure out how to link to "create" from index
+
+User.create!(email: 's@s.com', password: "ssssss")
 
 ActiveRecord::Base.transaction do
   n_users = 2
@@ -11,13 +16,13 @@ ActiveRecord::Base.transaction do
   users = []
   n_users.times do |i|
     users[i] = User.create(email: Faker::Internet.email,
-      password: "p455w0rd")
+                           password: "abcdefg")
   end
 
   posts = []
   n_posts.times do |i|
     posts[i] = Post.create(body: Faker::ChuckNorris.fact,
-      user_id: (rand(n_users) + 1))
+                           post_author_id: (rand(n_users) + 1))
   end
 
   likes = []

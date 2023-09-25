@@ -9,7 +9,7 @@
     <div class="posts-header-user-area">
       <% if @user_signed_in %>
         <%= "You are signed in." %> &nbsp;
-        <%= link_to "sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
       <% else %>
         <span>
           You are not signed in.

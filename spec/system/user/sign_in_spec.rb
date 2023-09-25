@@ -6,7 +6,8 @@ feature 'Logging in' do
   given!(:user) { FactoryBot.create(:user) }
 
   scenario 'signs the user in successfully with a valid email and password' do
-    sign_in_with 'user@example.com', 'password123'
+    User.create(email: 'test_user@example.com', password: 'password123')
+    sign_in_with 'test_user@example.com', 'password123'
     page_content_has 'You are signed in.'
   end
 

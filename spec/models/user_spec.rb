@@ -16,18 +16,15 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
+require 'rails_helper'
 
-FactoryBot.define do
-  sequence :email do |n|
-    "user#{n}@example.com"
-  end
+RSpec.describe User, type: :model do
+  it 'creates a user' do
+    initial_count = User.count
+    FactoryBot.create(:user)
 
-  factory :user do
-    email { generate(:email) }
-    password { 'password123' }
-  end
-
-  trait :faker do
-    email { Faker::Internet.email }
+    final_count = User.count
+    difference = 1
+    expect(final_count - initial_count).to eq(difference)
   end
 end

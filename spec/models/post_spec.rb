@@ -19,5 +19,13 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'creates a post associated with a user' do
+    initial_count = Post.count
+    post_author = FactoryBot.create(:user)
+    FactoryBot.create(:post, post_author:)
+
+    final_count = Post.count
+    difference = 1
+    expect(final_count - initial_count).to eq(difference)
+  end
 end

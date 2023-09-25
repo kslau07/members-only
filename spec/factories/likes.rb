@@ -20,8 +20,8 @@
 #  liked_user_id  (liked_user_id => users.id)
 #
 FactoryBot.define do
-  factory :like do
-    user { nil }
-    post { nil }
-  end
+  # factory :like do
+  #   user { nil }
+  #   post { nil }
+  # end
 end

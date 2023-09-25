@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:post_author, :likes, :liked_users)
     @user_signed_in = user_signed_in?
-    @like = Like.new         # NOTE: delete if not used
   end
 
   def new

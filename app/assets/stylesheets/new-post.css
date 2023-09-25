@@ -1,5 +1,26 @@
 .new-post {
+  width: 100%;
   display: grid;
   place-content: center;
   padding-top: 10rem;
+}
+
+.new-post-form {
+  display: grid;
+  place-content: center;
+}
+
+.new-post-input-container {
+  width: 35rem;
+}
+
+.new-post-input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.new-post-submit-button {
+  padding-inline: 1rem;
+  padding-block: 0.25rem;
 }

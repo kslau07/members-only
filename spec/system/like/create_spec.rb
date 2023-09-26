@@ -12,7 +12,7 @@ feature 'Like a post' do
     sign_in_with_warden
     visit root_path
     initial_count = Like.count
-    click_button "Like"
+    click_button 'Like'
     final_count = Like.count
     difference = 1
     expect(final_count - initial_count).to eq(difference)
@@ -22,8 +22,8 @@ feature 'Like a post' do
     sign_in_with_warden
     visit root_path
     initial_count = Like.count
-    click_button "Like"
-    click_button "Unlike"
+    click_button 'Like'
+    click_button 'Unlike'
     final_count = Like.count
     difference = 0
     expect(final_count - initial_count).to eq(difference)

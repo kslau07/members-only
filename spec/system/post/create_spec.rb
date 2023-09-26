@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 feature 'Create a new post' do
-  scenario 'Try to create a new post with empty content' do
+  scenario 'When a blank post is submitted, an error is shown' do
     sign_in_with_warden
     visit root_path
     click_link 'New whispr'
@@ -12,7 +12,7 @@ feature 'Create a new post' do
     expect(page).to have_content("Body can't be blank")
   end
 
-  scenario 'Create a new post with content' do
+  scenario 'When a new post is submitted with valid text, no errors occur' do
     sign_in_with_warden
     visit root_path
     click_link 'New whispr'

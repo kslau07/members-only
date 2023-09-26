@@ -3,7 +3,21 @@
 require 'rails_helper'
 
 feature 'Logging in' do
-  given!(:user) { FactoryBot.create(:user) }
+  before do
+    post_author = FactoryBot.create(:user)
+    FactoryBot.create(:post, post_author:)
+  end
+
+  scenario 'Before logging in, a user sees "Anonymous" in place of author\'s email ' do
+    visit root_path
+    page_content_has 'Anonymous'
+  end
+
+  scenario 'After logging in, a user no longer sees "Anonymous" post authors' do
+    User.create(email: 'test_user@example.com', password: 'password123')
+    sign_in_with 'test_user@example.com', 'password123'
+    expect(page).to have_no_content('Anonymous')
+  end
 
   scenario 'signs the user in successfully with a valid email and password' do
     User.create(email: 'test_user@example.com', password: 'password123')

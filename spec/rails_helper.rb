@@ -34,6 +34,7 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
 RSpec.configure do |config|
   Capybara.register_driver :headless do |app|
     Capybara::Selenium::Driver.new(

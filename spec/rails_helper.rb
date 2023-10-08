@@ -36,13 +36,6 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
-  Capybara.register_driver :headless do |app|
-    Capybara::Selenium::Driver.new(
-      app,
-      browser: :chrome,
-      options: capabilities # change keyword
-    )
-  end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{Rails.root.join('spec/fixtures')}"
